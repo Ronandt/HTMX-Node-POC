@@ -7,8 +7,8 @@
     <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <h1>Welcome to <%= pageTitle %></h1>
+<body id="page">
+    <h1>Welcome to <%= pageTitle %>. This is the home page</h1>
     
     <ul>
         <% for (let i = 0; i < fruits.length; i++) { %>
@@ -23,8 +23,15 @@
     hx-get="/a"
     hx-target="#parent-div"
     hx-swap="outerHTML"
+    hx-boost="true"
     >
     Click me 
+    </button>
+
+    <button hx-get="/anotherEntirePage"
+    hx-target="#page"
+    hx-boost="true">
+    GO to contact page (entirely new page)
     </button>
 </body>
 

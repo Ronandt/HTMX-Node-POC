@@ -24,6 +24,10 @@ app.get("/a", (req, res) => {
   res.render('swapped', data)
 })
 
+app.get("/anotherEntirePage", (req, res) => {
+   res.render("newpage")
+})
+
 app.listen(5000, () => {
    console.log("Port listening at 5000")
 })
